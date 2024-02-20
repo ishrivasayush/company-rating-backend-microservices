@@ -20,7 +20,7 @@ public class CompanyController {
     private CompanyService companyService;
 
     @PostMapping("/")
-    public ResponseEntity<APIResponse> createJobHandler(@RequestBody CreateCompanyDto createCompanyDto)
+    public ResponseEntity<APIResponse> createCompanyHandler(@RequestBody CreateCompanyDto createCompanyDto)
     {
         APIResponse apiResponse=new APIResponse();
         try {
@@ -34,8 +34,9 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    //Update the Company
     @PutMapping("/")
-    public ResponseEntity<APIResponse> updateJobHandler(@RequestBody UpdateCompanyDto updateCompanyDto)
+    public ResponseEntity<APIResponse> updateCompanyHandler(@RequestBody UpdateCompanyDto updateCompanyDto)
     {
         APIResponse apiResponse=new APIResponse();
         try {
@@ -53,8 +54,9 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    //Get the Company
     @GetMapping("/")
-    public ResponseEntity<APIResponse> getJobsHandler()
+    public ResponseEntity<APIResponse> getCompanyHandler()
     {
         APIResponse apiResponse=new APIResponse();
         try {
@@ -68,8 +70,9 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    //Get the Company
     @GetMapping("/{companyId}")
-    public ResponseEntity<APIResponse> getJobHandler(@PathVariable Long companyId)
+    public ResponseEntity<APIResponse> getCompanyHandler(@PathVariable Long companyId)
     {
         APIResponse apiResponse=new APIResponse();
         try {
@@ -87,8 +90,9 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    //Delete the company
     @DeleteMapping("/{companyId}")
-    public ResponseEntity<APIResponse> deleteJobHandler(@PathVariable Long companyId)
+    public ResponseEntity<APIResponse> deleteCompanyHandler(@PathVariable Long companyId)
     {
         APIResponse apiResponse=new APIResponse();
         try {
